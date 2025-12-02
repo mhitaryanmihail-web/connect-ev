@@ -10,6 +10,7 @@ function App() {
             <Map/>
             <div className={"ui-container"}>
                 <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems: 'center'}}>
+
                     <Typography>
                         Connect EV
                     </Typography>
