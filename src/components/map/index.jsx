@@ -3,9 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import {MapControls} from "../mapControls";
 import { hanoverPoints } from '../../test-data';
 import {createChargingStationIcon} from "../marker";
-import { RadioButtonChecked} from '@mui/icons-material'
 import styles from './styles.module.scss'
-import L from 'leaflet';
 import * as React from "react";
 
 import {Drawer} from "../swipableDrawer";
