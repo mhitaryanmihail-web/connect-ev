@@ -1,6 +1,5 @@
 import L from 'leaflet';
 
-// Создаем иконку с MUI ChargingStation SVG
 export const createChargingStationIcon = (color = '#1976d2', size = 32) => {
     return L.divIcon({
         html: `

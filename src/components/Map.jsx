@@ -5,17 +5,17 @@ import { hanoverPoints } from '../test-data';
 import {createChargingStationIcon} from "./marker";
 import * as React from "react";
 
-import {Drawer} from "./SwipableDrawer/index";
-
-const stationIcon = createChargingStationIcon('#1976d2', 35);
+import {Drawer} from "./swipableDrawer/index";
 
 export const Map = () => {
     const [open, setOpen] = React.useState(false);
-    const [selectedPlace, setSelectedPlace] = React.useState({name: "", description: ""});
+    const [selectedPlace, setSelectedPlace] = React.useState({name: "", description: "", availability:{}});
+
+    const stationIcon = createChargingStationIcon('#1976d2', 35);
 
     const handleMarkerClick = (placeInfo) => {
         setOpen(true)
-        setSelectedPlace({name: placeInfo.name, description:placeInfo.description});
+        setSelectedPlace(placeInfo);
     }
 
     return <MapContainer
@@ -31,7 +31,7 @@ export const Map = () => {
     >
         <MapControls />
         {hanoverPoints.map(point => (
-            <Marker key={point.id} position={point.position} icon={stationIcon} eventHandlers={{click: ()=> handleMarkerClick(point)}}/>
+            <Marker key={point.id} position={point.position} icon={createChargingStationIcon(point.availabilityInfo.available ? '#1976d2' : 'gray', 35)} eventHandlers={{click: ()=> handleMarkerClick(point)}}/>
         ))}
         {/* Слой карты OpenStreetMap */}
         <TileLayer
