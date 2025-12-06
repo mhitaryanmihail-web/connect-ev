@@ -2,14 +2,15 @@ import './App.css';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-import {Map} from "./components/Map";
+import {Index} from "./components/map";
 
 function App() {
     return (
         <div className="app-container">
-            <Map/>
+            <Index/>
             <div className={"ui-container"}>
                 <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems: 'center'}}>
+
                     <Typography>
                         Connect EV
                     </Typography>
