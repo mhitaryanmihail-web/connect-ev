@@ -1,5 +1,4 @@
 import {useMap} from "react-leaflet";
-import L from 'leaflet';
 import IconButton from "@mui/material/IconButton"
 import Remove from "@mui/icons-material/Remove"
 import Add from "@mui/icons-material/Add"
