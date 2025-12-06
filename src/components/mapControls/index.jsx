@@ -6,7 +6,7 @@ import Add from "@mui/icons-material/Add"
 import Stack from "@mui/material/Stack"
 import NearMe from "@mui/icons-material/NearMe"
 
-export const MapControls = () => {
+export const MapControls = ({setPosition}) => {
     const map = useMap();
 
     const handleFindMe = () => {
@@ -15,14 +15,10 @@ export const MapControls = () => {
                 (position) => {
                     const { latitude, longitude } = position.coords;
 
+                    setPosition([latitude, longitude]);
+
                     // Центрируем карту на пользователе
                     map.flyTo([latitude, longitude], 15);
-
-                    // Добавляем маркер
-                    L.marker([latitude, longitude])
-                        .addTo(map)
-                        .bindPopup("Вы здесь!")
-                        .openPopup();
                 },
                 (error) => {
                     alert("Ошибка: " + error.message);

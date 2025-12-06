@@ -9,7 +9,9 @@ export const createChargingStationIcon = (color = '#1976d2', size = 32) => {
         height: ${size}px;
         background: white;
         border-radius: 50%;
-        border: 2px solid ${color};
+        border-width: 2px;
+        border-style: solid;
+        border-color: ${color};
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         display: flex;
         align-items: center;
