@@ -8,12 +8,39 @@
   left: calc(50% - 15px);
 }
 
-.avalableInfo {
+.placeInfoWrap {
+  background-color: lightgrey;
+  min-height: 30vh;
+  padding: 10px;
   display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.placeInfo {
+  display: flex;
+  justify-content: space-around;
   padding-top: 2px;
   gap: 4px;
+  width: 100%;
 
   div {
     display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .infoLabel {
+    color: gray;
+    font-size: 12px;
+  }
+
+  .availabilityInfoItem {
+    display: flex;
+    //width: 100%;
+    //justify-content: space-between;
+    flex-direction: row;
+    font-weight: 800;
   }
 }

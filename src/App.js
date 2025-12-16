@@ -9,12 +9,9 @@ function App() {
         <div className="app-container">
             <Index/>
             <div className={"ui-container"}>
-                <div style={{width:'100%', display:'flex', justifyContent:'center', alignItems: 'center'}}>
-
-                    <Typography>
-                        Connect EV
-                    </Typography>
-                </div>
+                <Typography>
+                    Connect EV
+                </Typography>
                 <Button sx={{background: 'white', color: 'black',  pointerEvents: 'auto'}}>
                     123123
                 </Button>
