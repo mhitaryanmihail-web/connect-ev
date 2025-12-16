@@ -32,7 +32,6 @@ export const Index = () => {
             <Marker key={point.id} position={point.position} icon={createChargingStationIcon(point.availabilityInfo.available ? '#1976d2' : 'gray', 35)} eventHandlers={{click: ()=> handleMarkerClick(point)}}/>
         ))}
         {userPosition.length && <Marker key={"user-geo"} position={userPosition} icon={createCurrentLocationMarker('black', 35)}/>}
-        {/* Слой карты OpenStreetMap */}
         <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
