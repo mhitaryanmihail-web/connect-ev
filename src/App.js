@@ -26,7 +26,7 @@ function App() {
 
     return (
         <div className="app-container">
-            <Index userPosition={userPosition} setUserPosition={setUserPosition} selectedPlaceCoords={selectedPlace.position}/>
+            <Index userPosition={userPosition} setUserPosition={setUserPosition} selectedPlaceCoords={selectedPlace.position} handleMarkerClick={handleMarkerClick}/>
             <div className={"ui-container"}>
                 <Button sx={{background: 'white', color: 'black',  pointerEvents: 'auto'}} onClick={handleFindNearest}>
                     Charge me
