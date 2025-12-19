@@ -11,7 +11,7 @@
     height: -webkit-fill-available;
     padding: 20px;
     pointer-events: none;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .charge-button{

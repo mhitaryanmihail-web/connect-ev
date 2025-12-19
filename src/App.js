@@ -1,6 +1,5 @@
 import './App.css';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import {Button} from '@mui/material';
 
 import {Index} from "./components/map";
 import { findNearestPointIndex } from './utils/find-nearest-location'
@@ -29,9 +28,6 @@ function App() {
         <div className="app-container">
             <Index userPosition={userPosition} setUserPosition={setUserPosition} selectedPlaceCoords={selectedPlace.position}/>
             <div className={"ui-container"}>
-                <Typography>
-                    Connect EV
-                </Typography>
                 <Button sx={{background: 'white', color: 'black',  pointerEvents: 'auto'}} onClick={handleFindNearest}>
                     Charge me
                 </Button>
