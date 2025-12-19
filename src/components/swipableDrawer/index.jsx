@@ -1,9 +1,12 @@
 import * as React from 'react';
 import {Typography, Box, SwipeableDrawer, Divider, Card} from '@mui/material';
-import {BatteryChargingFull, Battery0Bar} from "@mui/icons-material";
+import {BatteryChargingFull, Battery0Bar, BatteryAlert} from "@mui/icons-material";
 import styles from './styles.module.scss'
 
 export const Drawer = ({open, setOpen, placeInfo}) => {
+
+    const isEmpty = !!placeInfo?.availabilityInfo?.available
+
     return(
         <SwipeableDrawer
             sx={{height: '30vh'}}
@@ -15,7 +18,7 @@ export const Drawer = ({open, setOpen, placeInfo}) => {
             <div className={styles.puller}>
             </div>
             <Box className={styles.placeInfoWrap}>
-                <Card variant={"outlined"} sx={{padding: '1rem'}}>
+                <Card variant={"outlined"} className={styles.drawerCard}>
                     <Box>
                         <Typography variant={"h5"} fontWeight={700}>
                             {placeInfo.name}
@@ -31,7 +34,7 @@ export const Drawer = ({open, setOpen, placeInfo}) => {
                         <Box>
                             <Typography className={styles.infoLabel}>Available</Typography>
                             <Box className={styles.availabilityInfoItem}>
-                                <BatteryChargingFull/>
+                                {isEmpty ? <BatteryChargingFull/> : <BatteryAlert color={"error"}/>}
                                 <Typography fontWeight={800}>
                                     {placeInfo.availabilityInfo?.available}
                                 </Typography>
@@ -58,30 +61,30 @@ export const Drawer = ({open, setOpen, placeInfo}) => {
                         </Box>
                     </Box>
                 </Card>
-                <Card variant={"outlined"} sx={{padding: '1rem'}}>
+                <Card variant={"outlined"} sx={{padding: '1rem'}} className={styles.drawerCard}>
                     <Typography fontWeight={700}>
                         Tariffs
                     </Typography>
-                    <Box>
-                        <Box sx={{display: 'flex', gap: '1rem'}}>
+                    <Box className={styles.tariffs}>
+                        <Box className={styles.tariffItem} >
                             <Typography>
-                                1h
+                                first 1 hour
                             </Typography>
                             <Typography>
-                                {placeInfo?.tariffs?.hour ?? '-'} €/h
-                            </Typography>
-                        </Box>
-                        <Box sx={{display: 'flex', gap: '1rem'}}>
-                            <Typography>
-                                2h
-                            </Typography>
-                            <Typography>
-                                {placeInfo?.tariffs?.hour2 ?? '-'} €/h
+                                {placeInfo?.tariffs?.hour ?? '-'} €
                             </Typography>
                         </Box>
-                        <Box sx={{display: 'flex', gap: '1rem'}}>
+                        <Box className={styles.tariffItem}>
                             <Typography>
-                                1 day
+                                next 2 hours
+                            </Typography>
+                            <Typography>
+                                {placeInfo?.tariffs?.hour2 ?? '-'} €
+                            </Typography>
+                        </Box>
+                        <Box className={styles.tariffItem}>
+                            <Typography>
+                                till the end of the day
                             </Typography>
                             <Typography>
                                 {placeInfo?.tariffs?.day ?? '-'} €

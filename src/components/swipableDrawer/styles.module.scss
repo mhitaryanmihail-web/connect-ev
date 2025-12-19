@@ -1,7 +1,7 @@
 .puller {
   width: 30px;
   height: 6px;
-  background-color: gray;
+  background-color: #49454F;
   border-radius: 3px;
   position: absolute;
   top: 8px;
@@ -9,9 +9,9 @@
 }
 
 .placeInfoWrap {
-  background-color: lightgrey;
+  background-color: #F3EDF7;
   min-height: 30vh;
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -38,9 +38,24 @@
 
   .availabilityInfoItem {
     display: flex;
-    //width: 100%;
-    //justify-content: space-between;
     flex-direction: row;
     font-weight: 800;
   }
+}
+
+.drawerCard {
+  background-color: #FEF7FF;
+  padding: 1rem;
+  border-radius: 1rem !important;
+}
+
+.tariffs{
+  background-color: #E6E0E9;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.tariffItem {
+  display: flex;
+  justify-content: space-between;
 }

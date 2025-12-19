@@ -34,13 +34,13 @@ export const MapControls = ({setPosition}) => {
     return(
         <Stack width={'100%'} height={'100%'} justifyContent={'center'} alignItems={'flex-end'} spacing={1} zIndex={1000} style={{padding: 10}}>
             <IconButton style={{backgroundColor:"white", zIndex: 1000}} onClick={() => map.zoomIn() }>
-                <Add/>
+                <Add color={'primary'}/>
             </IconButton>
             <IconButton style={{backgroundColor:"white", zIndex: 1000}} onClick={() => map.zoomOut() } >
-                <Remove/>
+                <Remove color={'primary'}/>
             </IconButton>
             <IconButton style={{backgroundColor:"white", zIndex: 1000}} onClick={() => handleFindMe()}>
-                <NearMe/>
+                <NearMe color={'primary'}/>
             </IconButton>
         </Stack>
     )

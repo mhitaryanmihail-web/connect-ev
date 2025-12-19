@@ -1,24 +1,13 @@
 import {MapContainer, Marker, TileLayer} from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
-import {MapControls} from "../mapControls";
 import { hanoverPoints } from '../../test-data';
 import {createChargingStationIcon} from "../marker";
 import styles from './styles.module.scss'
 import * as React from "react";
-
-import {Drawer} from "../swipableDrawer";
-import {useState} from "react";
 import {createCurrentLocationMarker} from "../marker/currentLocationMarker";
+import {MapControls} from "../mapControls";
 
-export const Index = () => {
-    const [open, setOpen] = React.useState(false);
-    const [selectedPlace, setSelectedPlace] = React.useState({name: "", description: "", availability:{}});
-    const [userPosition, setUserPosition] = useState([])
-
-    const handleMarkerClick = (placeInfo) => {
-        setOpen(true)
-        setSelectedPlace(placeInfo);
-    }
+export const Index = ({userPosition, handleMarkerClick, setUserPosition}) => {
 
     return <MapContainer
         center={[55.7558, 37.6173]}
@@ -36,6 +25,5 @@ export const Index = () => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <Drawer open={open} setOpen={setOpen} placeInfo={selectedPlace} />
     </MapContainer>
 }
